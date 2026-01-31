@@ -325,5 +325,26 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
+  },
+  "homepage.tagline": {
+    "message": "¡Un lenguaje de programación simple para scripting, automatización y mucho más!"
+  },
+  "homepage.getStarted": {
+    "message": "Comenzar"
+  },
+  "homepage.seeExamples": {
+    "message": "Ver Ejemplos"
+  },
+  "homepage.quickExample.title": {
+    "message": "Ejemplo Rápido"
+  },
+  "homepage.installButton": {
+    "message": "Instalar Minilux"
+  },
+  "navbar.item.label.Documentation": {
+    "message": "Documentación"
+  },
+  "navbar.item.label.GitHub": {
+    "message": "GitHub"
   }
 }

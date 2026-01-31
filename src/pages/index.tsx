@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Translate from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
@@ -22,18 +23,20 @@ function HomepageHeader() {
               Minilux
             </Heading>
             <p className={styles.heroTagline}>
-              A simple programming language for scripting, automation and much more!
+              <Translate id="homepage.tagline">
+                A simple programming language for scripting, automation and much more!
+              </Translate>
             </p>
             <div className={styles.buttons}>
               <Link
                 className="button button--primary button--lg"
                 to="/docs/intro">
-                Get Started
+                <Translate id="homepage.getStarted">Get Started</Translate>
               </Link>
               <Link
                 className="button button--outline button--primary button--lg margin-left--md"
                 to="/docs/examples">
-                See Examples
+                <Translate id="homepage.seeExamples">See Examples</Translate>
               </Link>
             </div>
           </div>
@@ -48,7 +51,7 @@ function QuickExample() {
     <section className={styles.quickExample}>
       <div className="container">
         <Heading as="h2" className="text--center margin-bottom--lg">
-          Quick Example
+          <Translate id="homepage.quickExample.title">Quick Example</Translate>
         </Heading>
         <div className="row">
           <div className="col col--8 col--offset-2">
@@ -74,7 +77,7 @@ printf("Factorial: ", $result, "\\n")`}</code>
           <Link
             className="button button--primary button--lg"
             to="/docs/installation">
-            Install Minilux
+            <Translate id="homepage.installButton">Install Minilux</Translate>
           </Link>
         </div>
       </div>
@@ -83,7 +86,6 @@ printf("Factorial: ", $result, "\\n")`}</code>
 }
 
 export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title="Home"

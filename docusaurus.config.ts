@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -7,15 +7,14 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Minilux',
   tagline: 'A minimal experimental scripting language',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/minilux-icon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
-  url: 'https://minilux-org.github.io',
+  url: 'https://minilux.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -44,7 +43,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/minilux-org/minilux-org.github.io/tree/main/website/',
+            'https://github.com/minilux-org/minilux-org.github.io/tree/main/',
         },
         blog: false, // Disable blog
         theme: {
@@ -56,7 +55,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/logo.png',
+    image: 'img/minilux-icon.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -64,7 +63,7 @@ const config: Config = {
       title: 'Minilux',
       logo: {
         alt: 'Minilux Logo',
-        src: 'img/logo.png',
+        src: 'img/minilux-icon.png',
       },
       items: [
         {
@@ -96,7 +95,7 @@ const config: Config = {
             },
             {
               label: 'Language Reference',
-              to: '/docs/language',
+              to: '/docs/language/variables',
             },
           ],
         },
@@ -131,7 +130,5 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 };
-
-export default config;
 
 export default config;

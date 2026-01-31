@@ -12,10 +12,9 @@ Official documentation website for the Minilux programming language, built with 
 - 📱 Responsive design
 - 🌙 Dark mode support
 
-## Quick Start
+## Local Development
 
 ```bash
-cd website
 npm install
 npm start
 ```
@@ -30,7 +29,7 @@ Visit `http://localhost:3000/` to see the site.
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages. Changes to `main` branch trigger a new deployment.
+The site is automatically deployed to GitHub Pages. Changes to `main` branch trigger a new deployment via GitHub Actions.
 
 ## License
 

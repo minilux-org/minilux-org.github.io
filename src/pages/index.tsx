@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -12,9 +12,9 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroContent}>
-          <img 
-            src="/img/logo.png" 
-            alt="Minilux Logo" 
+          <img
+            src="/img/minilux-icon.png"
+            alt="Minilux Logo"
             className={styles.heroLogo}
           />
           <div className={styles.heroText}>
@@ -83,7 +83,7 @@ printf("Factorial: ", $result, "\\n")`}</code>
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title="Home"

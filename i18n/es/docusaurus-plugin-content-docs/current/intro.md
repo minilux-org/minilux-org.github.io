@@ -5,7 +5,7 @@ sidebar_position: 1
 # Bienvenido a Minilux
 
 <div style={{textAlign: 'center'}}>
-  <img src="/img/logo.png" alt="Logo de Minilux" width="200"/>
+  <img src="/img/minilux-icon.png" alt="Logo de Minilux" width="200"/>
 </div>
 
 **Minilux** es un lenguaje de scripting experimental mínimo diseñado para la simplicidad y el aprendizaje. Escrito en Rust, proporciona una sintaxis fácil de entender, perfecta para propósitos educativos y tareas de scripting rápidas.

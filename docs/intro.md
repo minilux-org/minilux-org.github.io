@@ -5,7 +5,7 @@ sidebar_position: 1
 # Welcome to Minilux
 
 <div style={{textAlign: 'center'}}>
-  <img src="/img/logo.png" alt="Minilux logo" width="200"/>
+  <img src="/img/minilux-icon.png" alt="Minilux logo" width="200"/>
 </div>
 
 **Minilux** is a minimal experimental scripting language designed for simplicity and learning. Written in Rust, it provides an easy-to-understand syntax perfect for educational purposes and quick scripting tasks.

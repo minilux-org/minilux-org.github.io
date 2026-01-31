@@ -100,7 +100,7 @@ printf("x ahora es un array con ", len($x), " elementos\n")
 Nombres de variables:
 - Deben empezar con `$`
 - Pueden contener letras, números y guiones bajos `_`
-- различают Mayúsculas y minúsculas (son case-sensitive)
+- Permite Mayúsculas y minúsculas (son case-sensitive)
 
 Nombres de variables válidos:
 ```minilux

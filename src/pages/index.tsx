@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Translate from '@docusaurus/Translate';
@@ -39,6 +38,21 @@ function HomepageHeader() {
                 <Translate id="homepage.seeExamples">See Examples</Translate>
               </Link>
             </div>
+
+            <div className={styles.extensionButtons}>
+              <Link
+                className={styles.extButton}
+                to="https://open-vsx.org/extension/minilux/minilux/">
+                <img src="https://open-vsx.org/favicon.ico" className={styles.extIcon} alt="" />
+                <Translate id="homepage.extAntigravity">Get the Minilux extension for antigravity</Translate>
+              </Link>
+              <Link
+                className={styles.extButton}
+                to="https://marketplace.visualstudio.com/items?itemName=minilux.minilux">
+                <img src="https://code.visualstudio.com/favicon.ico" className={styles.extIcon} alt="" />
+                <Translate id="homepage.extVSCode">Get the Minilux extension for VS Code</Translate>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -55,22 +69,37 @@ function QuickExample() {
         </Heading>
         <div className="row">
           <div className="col col--8 col--offset-2">
-            <pre className={styles.codeBlock}>
-              <code>{`# Simple greeting script
-$name = "World"
-printf("Hello, ", $name, "!\\n")
-
-# Calculate factorial
-$n = 5
-$result = 1
-
-while ($n > 0) {
-    $result = $result * $n
-    dec($n, 1)
-}
-
-printf("Factorial: ", $result, "\\n")`}</code>
-            </pre>
+            <div className={styles.terminal}>
+              <div className={styles.terminalHeader}>
+                <div className={clsx(styles.dot, styles.dotRed)}></div>
+                <div className={clsx(styles.dot, styles.dotYellow)}></div>
+                <div className={clsx(styles.dot, styles.dotGreen)}></div>
+                <div className={styles.terminalTitle}>hola.mi — minilux</div>
+              </div>
+              <pre className={styles.codeBlock}>
+                <code>
+                  <span className={styles.codeGreen}>#!/usr/local/bin/minilux</span><br />
+                  <br />
+                  <span className={styles.codeGreen}>#Llamada al sistema</span><br />
+                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"Usuario actual:\n"</span>, <span className={styles.codeYellow}>shell</span>(<span className={styles.codeOrange}>"whoami"</span>))<br />
+                  <br />
+                  <span className={styles.codeGreen}># variable</span><br />
+                  <span className={styles.codeVariable}>$n1</span>=<span className={styles.codeNumber}>10</span><br />
+                  <span className={styles.codeVariable}>$n2</span>=<span className={styles.codeNumber}>20</span><br />
+                  <br />
+                  <span className={styles.codeGreen}>#condicional</span><br />
+                  <span className={styles.codePurple}>if</span> (<span className={styles.codeVariable}>$n1</span> {'<'} <span className={styles.codeVariable}>$n2</span>) <span className={styles.codeYellow}>{'{'}</span><br />
+                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"n1 es menor que n2"</span>)<br />
+                  <span className={styles.codeYellow}>{'}'}</span> <span className={styles.codePurple}>else</span> <span className={styles.codeYellow}>{'{'}</span><br />
+                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"n1 no es menor que n2"</span>)<br />
+                  <span className={styles.codeYellow}>{'}'}</span><br />
+                  <br />
+                  <span className={styles.codeGreen}>#info del sistema:</span><br />
+                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"Información del sistema:"</span>)<br />
+                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeYellow}>shell</span>(<span className={styles.codeOrange}>"uname -a"</span>))
+                </code>
+              </pre>
+            </div>
           </div>
         </div>
         <div className="text--center margin-top--lg">

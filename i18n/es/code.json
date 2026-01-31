@@ -346,5 +346,11 @@
   },
   "navbar.item.label.GitHub": {
     "message": "GitHub"
+  },
+  "homepage.extAntigravity": {
+    "message": "Obtén la extensión Minilux para antigravity"
+  },
+  "homepage.extVSCode": {
+    "message": "Obtén la extensión Minilux para VS Code"
   }
 }

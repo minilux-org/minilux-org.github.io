@@ -122,7 +122,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Alexia Michelle. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Alexia Michelle.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -124,15 +124,129 @@
 }
 
 .codeBlock {
-  background-color: #2d2d2d;
-  color: #f8f8f2;
-  padding: 2rem;
-  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1.5rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   overflow-x: auto;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .codeBlock code {
-  font-family: 'Monaco', 'Courier New', monospace;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Terminal Effect */
+.terminal {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background-color: #333;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background-color: #ff5f56;
+}
+
+.dotYellow {
+  background-color: #ffbd2e;
+}
+
+.dotGreen {
+  background-color: #27c93f;
+}
+
+.terminalTitle {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8rem;
+  color: #999;
+  font-family: sans-serif;
+}
+
+/* Custom Highlight Classes */
+.codeGreen {
+  color: #6A9955;
+}
+
+.codeYellow {
+  color: #DCDCAA;
+}
+
+.codeVariable {
+  color: #9CDCFE;
+}
+
+.codePurple {
+  color: #C586C0;
+}
+
+.codeOrange {
+  color: #CE9178;
+}
+
+.codeNumber {
+  color: #B5CEA8;
+}
+
+.codeWhite {
+  color: #D4D4D4;
+}
+
+.extensionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 996px) {
+  .extensionButtons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.extButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  background: rgba(235, 196, 76, 0.05);
+  border: 1px solid rgba(235, 196, 76, 0.2);
+  color: var(--ifm-color-primary) !important;
+}
+
+.extButton:hover {
+  background: rgba(235, 196, 76, 0.15);
+  border-color: rgba(235, 196, 76, 0.4);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.extIcon {
+  width: 18px;
+  height: 18px;
 }

@@ -8,7 +8,7 @@ sidebar_position: 1
   <img src="/img/minilux-icon.png" alt="Logo de Minilux" width="200"/>
 </div>
 
-**Minilux** es un lenguaje de scripting experimental mínimo diseñado para la simplicidad y el aprendizaje. Escrito en Rust, proporciona una sintaxis fácil de entender, perfecta para propósitos educativos y tareas de scripting rápidas.
+**Minilux** es un lenguaje de programación mínimo diseñado para la simplicidad. Escrito en Rust, proporciona una sintaxis fácil de entender perfecta para propósitos educativos o tareas cotidianas.
 
 ## Características
 

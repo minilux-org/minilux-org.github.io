@@ -8,7 +8,7 @@ sidebar_position: 1
   <img src="/img/minilux-icon.png" alt="Minilux logo" width="200"/>
 </div>
 
-**Minilux** is a minimal experimental scripting language designed for simplicity and learning. Written in Rust, it provides an easy-to-understand syntax perfect for educational purposes and quick scripting tasks.
+**Minilux** is a minimal programming language designed for simplicity. Written in Rust, it provides an easy-to-understand syntax perfect for educational purposes or everyday tasks.
 
 ## Features
 

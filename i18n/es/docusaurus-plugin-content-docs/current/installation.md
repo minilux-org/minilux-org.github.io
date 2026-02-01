@@ -49,10 +49,10 @@ make
 
 ### Instalar
 
-Para instalar Minilux en todo el sistema (en `/usr/bin`):
+Por defecto, minilux se instala en /usr/bin/ (Linux) 
 
 ```bash
-sudo make install
+make install #requiere sudo, pero no usar sudo make install, sino le cambia los permisos al binario en target/
 ```
 
 **Nota para usuarios de macOS:** Es posible que necesites editar el `Makefile` y cambiar la ruta de instalación a `/usr/local/bin` si `/usr/bin` está protegido por el sistema.
@@ -88,7 +88,7 @@ Añade esta línea en la parte superior de tu script:
 #!/usr/bin/minilux
 
 $nombre = "Mundo"
-printf("¡Hola, $nombre!\n")
+printf("¡Hola ", $nombre, "!")
 ```
 
 Hazlo ejecutable y ejecútalo:
@@ -108,7 +108,7 @@ Minilux Interpreter Console (REPL)
 Version 0.1.0 on linux/x86_64 -- [Rust]
 
 > $x = 10
-> printf("x = $x\n")
+> printf("x = ", $x)
 x = 10
 > 
 ```

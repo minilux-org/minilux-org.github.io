@@ -52,7 +52,7 @@ make
 To install Minilux system-wide (to `/usr/bin`):
 
 ```bash
-sudo make install
+make install # requires sudo, but do not use sudo make install, instead change the permissions of the binary in target/
 ```
 
 **Note for macOS users:** You may need to edit the `Makefile` and change the installation path to `/usr/local/bin` if `/usr/bin` is protected.
@@ -88,7 +88,7 @@ Add this line at the top of your script:
 #!/usr/bin/minilux
 
 $name = "World"
-printf("Hello, $name!\n")
+printf("Hello ", $name)
 ```
 
 Make it executable and run:
@@ -108,7 +108,7 @@ Minilux Interpreter Console (REPL)
 Version 0.1.0 on linux/x86_64 -- [Rust]
 
 > $x = 10
-> printf("x = $x\n")
+> printf("x = ", $x)
 x = 10
 > 
 ```

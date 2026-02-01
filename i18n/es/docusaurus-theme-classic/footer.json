@@ -19,17 +19,13 @@
     "message": "Referencia del Lenguaje",
     "description": "The label of footer link with label=Language Reference linking to /docs/language"
   },
-  "link.item.label.GitHub": {
-    "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/minilux-org/minilux"
+  "link.item.label.Support": {
+    "message": "Soporte",
+    "description": "The label of footer link with label=Support linking to https://github.com/minilux-org/minilux/issues"
   },
   "link.item.label.GitHub Repository": {
     "message": "Repositorio GitHub",
     "description": "The label of footer link with label=GitHub Repository linking to https://github.com/minilux-org/minilux"
-  },
-  "link.item.label.VS Code Extension": {
-    "message": "Extensión para VS Code",
-    "description": "The label of footer link with label=VS Code Extension linking to https://github.com/minilux-org/minilux/tree/main/vscode-minilux"
   },
   "copyright": {
     "message": "Copyright © 2026 Alexia Michelle.",

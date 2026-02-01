@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Minilux',
-  tagline: 'A minimal experimental scripting language',
+  tagline: 'A tiny programming language designed for simplicity',
   favicon: 'img/minilux-icon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -78,8 +78,9 @@ const config: Config = {
         },
         {
           href: 'https://github.com/minilux-org/minilux',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -103,8 +104,8 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/minilux-org/minilux',
+              label: 'Support',
+              href: 'https://github.com/minilux-org/minilux/issues',
             },
           ],
         },
@@ -114,10 +115,6 @@ const config: Config = {
             {
               label: 'GitHub Repository',
               href: 'https://github.com/minilux-org/minilux',
-            },
-            {
-              label: 'VS Code Extension',
-              href: 'https://github.com/minilux-org/minilux/tree/main/vscode-minilux',
             },
           ],
         },

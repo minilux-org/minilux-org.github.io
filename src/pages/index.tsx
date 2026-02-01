@@ -118,7 +118,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Home"
-      description="A minimal experimental scripting language designed for simplicity and learning">
+      description="A tiny programming language designed for simplicity">
       <HomepageHeader />
       <main>
         <QuickExample />

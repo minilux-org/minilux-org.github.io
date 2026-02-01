@@ -11,8 +11,8 @@
     "message": "Documentación",
     "description": "Navbar item with label Documentation"
   },
-  "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+  "item.ariaLabel.GitHub repository": {
+    "message": "Repositorio GitHub",
+    "description": "Navbar item with aria-label GitHub repository"
   }
 }

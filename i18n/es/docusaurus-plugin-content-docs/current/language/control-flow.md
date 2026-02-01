@@ -30,15 +30,15 @@ if ($puntuacion >= 60) {
 
 ```minilux
 if ($puntuacion >= 90) {
-    printf("Nota: A\n")
+    printf("Calificación: A")
 } elseif ($puntuacion >= 80) {
-    printf("Nota: B\n")
+    printf("Calificación: B")
 } elseif ($puntuacion >= 70) {
-    printf("Nota: C\n")
+    printf("Calificación: C")
 } elseif ($puntuacion >= 60) {
-    printf("Nota: D\n")
+    printf("Calificación: D")
 } else {
-    printf("Nota: F\n")
+    printf("Calificación: F")
 }
 ```
 
@@ -85,7 +85,7 @@ Ejecuta código repetidamente mientras una condición sea verdadera:
 ```minilux
 $i = 1
 while ($i <= 5) {
-    printf("Cuenta: ", $i, "\n")
+    printf("Cuenta: ", $i)
     inc($i, 1)
 }
 ```
@@ -117,7 +117,7 @@ $contador = 0
 $max = 100
 
 while (($contador < $max) AND ($contador < 10)) {
-    printf("Contador: ", $contador, "\n")
+    printf("Contador: ", $contador)
     inc($contador, 1)
 }
 ```
@@ -137,7 +137,7 @@ while ($x > 0) {
 # ✅ CORRECTO: El bucle terminará
 $x = 10
 while ($x > 0) {
-    printf("x = ", $x, "\n")
+    printf("x = ", $x)
     dec($x, 1)  # Modifica la variable del bucle
 }
 ```
@@ -152,10 +152,10 @@ $resultado = 1
 
 while ($n > 0) {
     $resultado = $resultado * $n
-    dec($n, 1)
+    dec $n - 1
 }
 
-printf("Factorial: ", $resultado, "\n")  # imprime 120
+printf("Factorial: ", $resultado)  # imprime 120
 ```
 
 ### Suma de Números
@@ -166,20 +166,20 @@ $suma = 0
 
 while ($i <= 10) {
     $suma = $suma + $i
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Suma del 1 al 10: ", $suma, "\n")  # imprime 55
+printf("Suma del 1 al 10: ", $suma)  # imprime 55
 ```
 
-### Iteración de Arrays
+### Iteración de Array
 
 ```minilux
 $frutas = ["manzana", "platano", "naranja"]
 $i = 0
 
 while ($i < len($frutas)) {
-    printf("Fruta ", $i, ": ", $frutas[$i], "\n")
+    printf("Fruta ", $i, ": ", $frutas[$i])
     inc($i, 1)
 }
 ```
@@ -193,15 +193,15 @@ $i = 1
 
 while ($i < len($numeros)) {
     if ($numeros[$i] > $max) {
-        $max = $numbers[$i]
+        $max = $numeros[$i]
     }
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Valor máximo: ", $max, "\n")  # imprime 99
+printf("Valor máximo: ", $max)  # imprime 99
 ```
 
-## Mejores Prácticas de Flujo de Control
+## Buenas Prácticas para el Flujo de Control
 
 1. **Modifica siempre las variables del bucle** para evitar bucles infinitos.
 2. **Usa dobles paréntesis** con los operadores AND/OR.
@@ -213,12 +213,12 @@ printf("Valor máximo: ", $max, "\n")  # imprime 99
 # Buen ejemplo con comentarios
 $puntuacion = 85
 
-# Comprueba si el estudiante aprobó con honores
+# Comprobar si el estudiante aprobó con honores
 if (($puntuacion >= 90) AND ($asistencia >= 90)) {
-    printf("Aprobado con honores\n")
+    printf("Aprobado con honores")
 } elseif ($puntuacion >= 70) {
-    printf("Aprobado\n")
+    printf("Aprobado")
 } else {
-    printf("Necesitas mejorar\n")
+    printf("Necesita mejorar")
 }
 ```

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Minilux provides several built-in functions for common operations.
 
-## printf()
+## printf() / print()
 
 Print text and variables to standard output.
 
@@ -14,11 +14,18 @@ Print text and variables to standard output.
 
 ```minilux
 printf(arg1, arg2, arg3, ...)
+print(arg1, arg2, arg3, ...)
 ```
 
 ### Description
 
-`printf()` concatenates all arguments and prints them. It automatically adds a newline at the end if missing.
+`printf()` concatenates all arguments and prints them. `print()` is an identical alias. Both functions automatically add a newline at the end if one is missing.
+
+Strings also support **variable interpolation**:
+```minilux
+$name = "Alexia"
+printf("Hello, $name!\n")
+```
 
 ### Escape Sequences
 
@@ -32,18 +39,32 @@ Supported escape sequences in strings:
 # Print simple text
 printf("Hello, World!\n")
 
-# Print variables
+# Print variables by interpolation
 $name = "Alexia"
-printf("Hello, ", $name, "!\n")
+printf("Hello, $name!\n")
 
-# Print numbers
-$age = 42
-printf("Age: ", $age, "\n")
-
-# Mix multiple values
+# Mix multiple values as arguments
 $a = 10
 $b = 20
-printf("Sum of ", $a, " and ", $b, " is ", $a + $b, "\n")
+printf("Sum of ", $a, " and ", $b, " is ", $a + $b)
+```
+
+## read()
+
+Read a line from standard input and store it in a variable.
+
+### Syntax
+
+```minilux
+read($variable)
+```
+
+### Examples
+
+```minilux
+printf("What is your name? ")
+read($name)
+printf("Hello, $name!\n")
 ```
 
 ## len()
@@ -61,173 +82,52 @@ len($variable)
 ```minilux
 # Array length
 $numbers = [1, 2, 3, 4, 5]
-printf("Array has ", len($numbers), " elements\n")  # prints 5
+printf("Array has ", len($numbers), " elements")
 
 # String length
 $text = "Hello"
-printf("String has ", len($text), " characters\n")  # prints 5
-
-# Empty array
-$empty = []
-printf("Empty array length: ", len($empty), "\n")  # prints 0
+printf("String has ", len($text), " characters")
 ```
 
-## inc()
+## number()
 
-Increment a variable by a specified amount.
+Convert a string or an existing integer into a numeric value for arithmetic.
 
 ### Syntax
 
 ```minilux
-inc($variable, amount)
+number(expression)
 ```
 
 ### Examples
 
 ```minilux
-$counter = 0
+read($input)
+$value = number($input)
+printf("Twice is ", $value * 2)
+```
+**Note:** If the input cannot be parsed as a number, it returns `0`.
 
-inc($counter, 1)   # counter is now 1
-inc($counter, 5)   # counter is now 6
-inc($counter, 10)  # counter is now 16
+## lower() / upper()
 
-printf("Counter: ", $counter, "\n")  # prints 16
+Normalize string casing.
 
-# In loops
-$i = 0
-while ($i < 5) {
-    printf("i = ", $i, "\n")
-    inc($i, 1)
+### Syntax
+
+```minilux
+lower(string)
+upper(string)
+```
+
+### Examples
+
+```minilux
+$answer = "YeS"
+if (lower($answer) == "yes") {
+    printf("Confirmed\n")
 }
-```
 
-## dec()
-
-Decrement a variable by a specified amount.
-
-### Syntax
-
-```minilux
-dec($variable, amount)
-```
-
-### Examples
-
-```minilux
-$countdown = 10
-
-dec($countdown, 1)  # countdown is now 9
-dec($countdown, 3)  # countdown is now 6
-
-printf("Countdown: ", $countdown, "\n")  # prints 6
-
-# Countdown loop
-$timer = 5
-while ($timer > 0) {
-    printf($timer, "...\n")
-    dec($timer, 1)
-}
-printf("Go!\n")
-```
-
-## push()
-
-Add an element to the end of an array.
-
-### Syntax
-
-```minilux
-push($array, value)
-```
-
-### Examples
-
-```minilux
-$fruits = ["apple", "banana"]
-push($fruits, "orange")
-push($fruits, "grape")
-
-# $fruits is now ["apple", "banana", "orange", "grape"]
-
-$i = 0
-while ($i < len($fruits)) {
-    printf("Fruit: ", $fruits[$i], "\n")
-    inc($i, 1)
-}
-```
-
-## pop()
-
-Remove and return the last element from an array.
-
-### Syntax
-
-```minilux
-pop($array)
-```
-
-### Examples
-
-```minilux
-$stack = [1, 2, 3, 4, 5]
-
-pop($stack)  # Removes 5
-pop($stack)  # Removes 4
-
-# $stack is now [1, 2, 3]
-
-printf("Remaining elements: ", len($stack), "\n")  # prints 3
-```
-
-## shift()
-
-Remove and return the first element from an array.
-
-### Syntax
-
-```minilux
-shift($array)
-```
-
-### Examples
-
-```minilux
-$queue = ["first", "second", "third"]
-
-shift($queue)  # Removes "first"
-shift($queue)  # Removes "second"
-
-# $queue is now ["third"]
-
-printf("Remaining: ", len($queue), "\n")  # prints 1
-```
-
-## unshift()
-
-Add an element to the beginning of an array.
-
-### Syntax
-
-```minilux
-unshift($array, value)
-```
-
-### Examples
-
-```minilux
-$list = [2, 3, 4]
-
-unshift($list, 1)
-unshift($list, 0)
-
-# $list is now [0, 1, 2, 3, 4]
-
-$i = 0
-while ($i < len($list)) {
-    printf($list[$i], " ")
-    inc($i, 1)
-}
-printf("\n")
+printf("Shouting: ", upper("minilux"))
 ```
 
 ## shell()
@@ -242,31 +142,54 @@ $output = shell("command")
 
 ### Description
 
-Executes a shell command using `/bin/sh -c` on Unix systems or `cmd /C` on Windows. Returns the standard output with the trailing newline removed.
+Returns the standard output with the trailing newline removed.
 
 ### Examples
 
 ```minilux
-# Get current user
 $user = shell("whoami")
-printf("Current user: ", $user, "\n")
-
-# Get current date
-$date = shell("date")
-printf("Date: ", $date, "\n")
-
-# List files
-$files = shell("ls -l")
-printf($files, "\n")
-
-# Get system info
-$os = shell("uname -s")
-printf("Operating System: ", $os, "\n")
+$date = shell("date +%Y-%m-%d")
+printf("User: $user on $date\n")
 ```
 
-### Security Warning
+## inc / dec
 
-⚠️ **Be careful with shell()** - executing untrusted commands can be dangerous. Never pass user input directly to `shell()` without validation.
+Increment or decrement a variable. Note that these are **statements** and do not use parentheses.
+
+### Syntax
+
+```minilux
+inc $variable + amount
+dec $variable - amount
+```
+
+### Examples
+
+```minilux
+$counter = 0
+inc $counter + 1   # counter is 1
+inc $counter + 5   # counter is 6
+dec $counter - 2   # counter is 4
+```
+
+## Array Operations
+
+These operations modify an array in place. They are called like statements without parentheses.
+
+- `push $array, value` - Add element to end
+- `pop $array` - Remove element from end
+- `shift $array` - Remove element from beginning
+- `unshift $array, value` - Add element to beginning
+
+### Examples
+
+```minilux
+$list = [1, 2, 3]
+push $list, 4        # [1, 2, 3, 4]
+pop $list            # [1, 2, 3]
+shift $list          # [2, 3]
+unshift $list, 0     # [0, 2, 3]
+```
 
 ## sleep()
 
@@ -284,71 +207,23 @@ sleep(seconds)
 printf("Starting...\n")
 sleep(2)
 printf("2 seconds later\n")
-
-# Countdown with delays
-$count = 5
-while ($count > 0) {
-    printf($count, "...\n")
-    sleep(1)
-    dec($count, 1)
-}
-printf("Done!\n")
-
-# Progress simulation
-printf("Processing")
-$i = 0
-while ($i < 5) {
-    printf(".")
-    sleep(1)
-    inc($i, 1)
-}
-printf(" Complete!\n")
 ```
 
-## Array Function Examples
+## sockopen() / sockwrite() / sockread() / sockclose()
 
-### Stack Implementation
+TCP socket operations for network programming.
 
-```minilux
-# Push elements onto stack
-$stack = []
-push($stack, 10)
-push($stack, 20)
-push($stack, 30)
+- `sockopen("name", "host", port)` - Open a connection
+- `sockwrite("name", "data")` - Send data
+- `sockread("name", $var)` - Read data into variable
+- `sockclose("name")` - Close connection
 
-# Pop elements off stack (LIFO)
-while (len($stack) > 0) {
-    pop($stack)
-    printf("Popped, remaining: ", len($stack), "\n")
-}
-```
-
-### Queue Implementation
+### Example
 
 ```minilux
-# Add to queue
-$queue = []
-push($queue, "Task 1")
-push($queue, "Task 2")
-push($queue, "Task 3")
-
-# Process queue (FIFO)
-while (len($queue) > 0) {
-    shift($queue)
-    printf("Processed, remaining: ", len($queue), "\n")
-}
-```
-
-### Building Arrays
-
-```minilux
-$numbers = []
-$i = 1
-
-while ($i <= 10) {
-    push($numbers, $i)
-    inc($i, 1)
-}
-
-printf("Generated ", len($numbers), " numbers\n")
+sockopen("web", "example.com", 80)
+sockwrite("web", "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n")
+sockread("web", $response)
+printf($response)
+sockclose("web")
 ```

@@ -39,6 +39,18 @@ $name = 'Alexia'
 $message = "Line 1\nLine 2\tTabbed"
 ```
 
+### String Interpolation
+
+Minilux supports variable interpolation inside double-quoted strings:
+
+```minilux
+$name = "Alexia"
+$age = 42
+printf("My name is ", $name, " and I am ", $age, " years old")
+```
+
+### Escape Sequences
+
 Supported escape sequences:
 - `\n` - newline
 - `\t` - tab
@@ -62,8 +74,8 @@ Access individual characters in a string using array-like syntax:
 
 ```minilux
 $text = "Hello"
-printf("First character: ", $text[0], "\n")   # prints "H"
-printf("Third character: ", $text[2], "\n")   # prints "l"
+printf("First character: ", $text[0])   # prints "H"
+printf("Third character: ", $text[2])   # prints "l"
 ```
 
 ## Array Indexing
@@ -72,12 +84,12 @@ Access array elements by index (0-based):
 
 ```minilux
 $fruits = ["apple", "banana", "orange"]
-printf("First fruit: ", $fruits[0], "\n")     # prints "apple"
-printf("Second fruit: ", $fruits[1], "\n")    # prints "banana"
+printf("First fruit: ", $fruits[0])     # prints "apple"
+printf("Second fruit: ", $fruits[1])    # prints "banana"
 
 # Assign to array elements
 $fruits[0] = "mango"
-printf("New first fruit: ", $fruits[0], "\n") # prints "mango"
+printf("New first fruit: ", $fruits[0]) # prints "mango"
 ```
 
 ## Variable Reassignment
@@ -86,10 +98,10 @@ Variables can be reassigned to different types:
 
 ```minilux
 $x = 10
-printf("x is: ", $x, "\n")  # prints "x is: 10"
+printf("x is: ", $x)  # prints "x is: 10"
 
 $x = "now a string"
-printf("x is: ", $x, "\n")  # prints "x is: now a string"
+printf("x is: ", $x)  # prints "x is: now a string"
 
 $x = [1, 2, 3]
 printf("x is now an array with ", len($x), " elements\n")
@@ -120,5 +132,5 @@ if (1 == 1) {
     $x = 100
 }
 
-printf("x = ", $x, "\n")  # x is accessible here
+printf("x = ", $x)  # x is accessible here
 ```

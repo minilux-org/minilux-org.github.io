@@ -20,9 +20,9 @@ if ($age >= 18) {
 
 ```minilux
 if ($score >= 60) {
-    printf("Passed!\n")
+    printf("Passed!")
 } else {
-    printf("Failed\n")
+    printf("Failed")
 }
 ```
 
@@ -30,15 +30,15 @@ if ($score >= 60) {
 
 ```minilux
 if ($score >= 90) {
-    printf("Grade: A\n")
+    printf("Grade: A")
 } elseif ($score >= 80) {
-    printf("Grade: B\n")
+    printf("Grade: B")
 } elseif ($score >= 70) {
-    printf("Grade: C\n")
+    printf("Grade: C")
 } elseif ($score >= 60) {
-    printf("Grade: D\n")
+    printf("Grade: D")
 } else {
-    printf("Grade: F\n")
+    printf("Grade: F")
 }
 ```
 
@@ -49,16 +49,16 @@ if ($score >= 90) {
 ```minilux
 # ✅ CORRECT - Double parentheses for compound conditions
 if (($age >= 18) AND ($hasID == 1)) {
-    printf("Access granted\n")
+    printf("Access granted")
 }
 
 if (($isWeekend == 1) OR ($isHoliday == 1)) {
-    printf("Day off!\n")
+    printf("Day off!")
 }
 
 # ✅ CORRECT - Simple conditions use single parentheses
 if ($age >= 18) {
-    printf("Adult\n")
+    printf("Adult")
 }
 ```
 
@@ -67,12 +67,12 @@ if ($age >= 18) {
 ```minilux
 if ($age >= 18) {
     if ($hasLicense == 1) {
-        printf("You can drive\n")
+        printf("You can drive")
     } else {
-        printf("You need a license\n")
+        printf("You need a license")
     }
 } else {
-    printf("Too young to drive\n")
+    printf("Too young to drive")
 }
 ```
 
@@ -85,8 +85,8 @@ Execute code repeatedly while a condition is true:
 ```minilux
 $i = 1
 while ($i <= 5) {
-    printf("Count: ", $i, "\n")
-    inc($i, 1)
+    printf("Count: ", $i)
+    inc $i + 1
 }
 ```
 
@@ -104,10 +104,10 @@ Count: 5
 ```minilux
 $countdown = 10
 while ($countdown > 0) {
-    printf($countdown, "...\n")
-    dec($countdown, 1)
+    printf("$countdown...")
+    dec $countdown - 1
 }
-printf("Blast off!\n")
+printf("Blast off!")
 ```
 
 ### Loop with Compound Condition
@@ -117,8 +117,8 @@ $counter = 0
 $max = 100
 
 while (($counter < $max) AND ($counter < 10)) {
-    printf("Counter: ", $counter, "\n")
-    inc($counter, 1)
+    printf("Counter: ",$counter)
+    inc $counter + 1
 }
 ```
 
@@ -130,15 +130,15 @@ Always ensure your loop condition will eventually become false:
 # ❌ WARNING: Infinite loop!
 $x = 1
 while ($x > 0) {
-    printf("This will never stop!\n")
+    printf("This will never stop!")
     # Forgot to modify $x
 }
 
 # ✅ CORRECT: Loop will terminate
 $x = 10
 while ($x > 0) {
-    printf("x = ", $x, "\n")
-    dec($x, 1)  # Modify the loop variable
+    printf("x = $x")
+    dec $x - 1  # Modify the loop variable
 }
 ```
 
@@ -152,10 +152,10 @@ $result = 1
 
 while ($n > 0) {
     $result = $result * $n
-    dec($n, 1)
+    dec $n - 1
 }
 
-printf("Factorial: ", $result, "\n")  # prints 120
+printf("Factorial: ",$result)  # prints 120
 ```
 
 ### Sum of Numbers
@@ -166,10 +166,10 @@ $sum = 0
 
 while ($i <= 10) {
     $sum = $sum + $i
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Sum of 1 to 10: ", $sum, "\n")  # prints 55
+printf("Sum of 1 to 10: ", $sum)  # prints 55
 ```
 
 ### Array Iteration
@@ -179,8 +179,8 @@ $fruits = ["apple", "banana", "orange"]
 $i = 0
 
 while ($i < len($fruits)) {
-    printf("Fruit ", $i, ": ", $fruits[$i], "\n")
-    inc($i, 1)
+    printf("Fruit $i: ", $fruits[$i])
+    inc $i + 1
 }
 ```
 
@@ -195,10 +195,10 @@ while ($i < len($numbers)) {
     if ($numbers[$i] > $max) {
         $max = $numbers[$i]
     }
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Maximum value: ", $max, "\n")  # prints 99
+printf("Maximum value: ", $max)  # prints 99
 ```
 
 ## Control Flow Best Practices
@@ -215,10 +215,10 @@ $score = 85
 
 # Check if student passed with honors
 if (($score >= 90) AND ($attendance >= 90)) {
-    printf("Passed with honors\n")
+    printf("Passed with honors")
 } elseif ($score >= 70) {
-    printf("Passed\n")
+    printf("Passed")
 } else {
-    printf("Need to improve\n")
+    printf("Need to improve")
 }
 ```

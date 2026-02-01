@@ -4,17 +4,27 @@ sidebar_position: 2
 
 # Installation
 
-## Prerequisites
+To build Minilux from source, you need the **Rust toolchain** (cargo + rustc).
 
-To build Minilux from source, you need the Rust toolchain (cargo + rustc).
-
-### Install Rust on Debian/Ubuntu
+### Install Rust on Debian/GoldenDog/Ubuntu
 
 ```bash
 sudo apt install cargo
 ```
 
-### Install Rust on Other Systems
+### Fedora
+
+```bash
+sudo dnf install rust cargo
+```
+
+### macOS (via homebrew)
+
+```bash
+brew install rust
+```
+
+### Other Systems
 
 Use rustup for the latest version:
 
@@ -31,31 +41,36 @@ git clone https://github.com/minilux-org/minilux.git
 cd minilux
 ```
 
-Build the project:
+### Build
 
 ```bash
 make
 ```
 
-Or use Cargo directly:
-
-```bash
-cargo build --release
-```
-
-The compiled binary will be at `./target/release/minilux`.
-
-## System Installation
+### Install
 
 To install Minilux system-wide (to `/usr/bin`):
 
 ```bash
-make install
+sudo make install
 ```
 
-This allows you to:
-- Run `minilux` from anywhere
-- Use shebang (`#!/usr/bin/minilux`) in scripts
+**Note for macOS users:** You may need to edit the `Makefile` and change the installation path to `/usr/local/bin` if `/usr/bin` is protected.
+
+### Rebuild
+
+To completely rebuild, remove the target directory and clean build artifacts:
+
+```bash
+rm -rf target/
+make uninstall; make clean; make
+```
+
+### Uninstall
+
+```bash
+sudo make uninstall
+```
 
 ## Running Scripts
 
@@ -63,12 +78,6 @@ This allows you to:
 
 ```bash
 ./minilux script.mi
-```
-
-Or if installed:
-
-```bash
-minilux script.mi
 ```
 
 ### With Shebang
@@ -79,7 +88,7 @@ Add this line at the top of your script:
 #!/usr/bin/minilux
 
 $name = "World"
-printf("Hello, ", $name, "!\n")
+printf("Hello, $name!\n")
 ```
 
 Make it executable and run:
@@ -99,20 +108,13 @@ Minilux Interpreter Console (REPL)
 Version 0.1.0 on linux/x86_64 -- [Rust]
 
 > $x = 10
-> printf("x = ", $x, "\n")
+> printf("x = $x\n")
 x = 10
 > 
 ```
 
 ## VS Code Extension
 
-For syntax highlighting in Visual Studio Code:
-
-```bash
-cd vscode-minilux
-npm install -g @vscode/vsce
-vsce package
-code --install-extension minilux-0.1.0.vsix
-```
-
-Or manually install from the Extensions panel.
+For syntax highlighting and snippets:
+- [Minilux for VS Code](https://marketplace.visualstudio.com/items?itemName=minilux.minilux)
+- [Minilux for Antigravity (Open VSX)](https://open-vsx.org/extension/minilux/minilux)

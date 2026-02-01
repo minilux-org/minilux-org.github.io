@@ -39,6 +39,18 @@ $nombre = 'Alexia'
 $mensaje = "Línea 1\nLínea 2\tTabulado"
 ```
 
+### Interpolación de Cadenas
+
+Minilux soporta la interpolación de variables dentro de cadenas con comillas dobles:
+
+```minilux
+$nombre = "Alexia"
+$edad = 42
+printf("Mi nombre es $nombre y tengo $edad años.\n")
+```
+
+### Secuencias de Escape
+
 Secuencias de escape soportadas:
 - `\n` - nueva línea
 - `\t` - tabulador
@@ -62,8 +74,8 @@ Accede a caracteres individuales en una cadena usando la sintaxis similar a un a
 
 ```minilux
 $texto = "Hola"
-printf("Primer carácter: ", $texto[0], "\n")   # imprime "H"
-printf("Tercer carácter: ", $texto[2], "\n")   # imprime "l"
+printf("Primer carácter: ", $texto[0])   # imprime "H"
+printf("Tercer carácter: ", $texto[2])   # imprime "l"
 ```
 
 ## Indexación de Arrays
@@ -72,12 +84,12 @@ Accede a los elementos del array por índice (empezando por 0):
 
 ```minilux
 $frutas = ["manzana", "platano", "naranja"]
-printf("Primera fruta: ", $frutas[0], "\n")     # imprime "manzana"
-printf("Segunda fruta: ", $frutas[1], "\n")    # imprime "platano"
+printf("Primera fruta: ", $frutas[0])     # imprime "manzana"
+printf("Segunda fruta: ", $frutas[1])    # imprime "platano"
 
 # Asignar a elementos de un array
 $frutas[0] = "mango"
-printf("Nueva primera fruta: ", $frutas[0], "\n") # imprime "mango"
+printf("Nueva primera fruta: ", $frutas[0]) # imprime "mango"
 ```
 
 ## Reasignación de Variables
@@ -86,10 +98,10 @@ A las variables se les puede reasignar diferentes tipos:
 
 ```minilux
 $x = 10
-printf("x es: ", $x, "\n")  # imprime "x es: 10"
+printf("x es: ", $x)  # imprime "x es: 10"
 
 $x = "ahora una cadena"
-printf("x es: ", $x, "\n")  # imprime "x es: ahora una cadena"
+printf("x es: ", $x)  # imprime "x es: ahora una cadena"
 
 $x = [1, 2, 3]
 printf("x ahora es un array con ", len($x), " elementos\n")
@@ -120,5 +132,5 @@ if (1 == 1) {
     $x = 100
 }
 
-printf("x = ", $x, "\n")  # x es accesible aquí
+printf("x = ", $x)  # x es accesible aquí
 ```

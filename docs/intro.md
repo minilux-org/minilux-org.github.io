@@ -4,9 +4,7 @@ sidebar_position: 1
 
 # Welcome to Minilux
 
-<div style={{textAlign: 'center'}}>
-  <img src="/img/minilux-icon.png" alt="Minilux logo" width="200"/>
-</div>
+![minilux-icon](/img/minilux-icon.png)
 
 **Minilux** is a minimal programming language designed for simplicity. Written in Rust, it provides an easy-to-understand syntax perfect for educational purposes or everyday tasks.
 
@@ -26,7 +24,7 @@ sidebar_position: 1
 ```minilux
 # Simple greeting script
 $name = "World"
-printf("Hello, ", $name, "!\n")
+printf("Hello, ", $name)
 
 # Calculate factorial
 $n = 5
@@ -34,10 +32,10 @@ $result = 1
 
 while ($n > 0) {
     $result = $result * $n
-    dec($n, 1)
+    dec $n - 1
 }
 
-printf("Factorial of 5 is: ", $result, "\n")
+printf("Factorial:", $result)
 ```
 
 ## Why Minilux?
@@ -62,6 +60,6 @@ It's perfect for:
 
 ---
 
-**Author**: Alexia Michelle &lt;alexia@goldendoglinux.org&gt;  
-**License**: MIT  
+**Author**: Alexia Michelle &lt;alexia@minilux.org&gt;  
+**License**: MPL 2.0  
 **Repository**: [github.com/minilux-org/minilux](https://github.com/minilux-org/minilux)

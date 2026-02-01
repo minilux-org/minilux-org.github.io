@@ -20,8 +20,8 @@ $b = 20
 $sum = $a + $b
 $product = $a * $b
 
-printf("Sum: ", $sum, "\n")
-printf("Product: ", $product, "\n")
+printf("Sum: ", $sum)
+printf("Product: ", $product)
 ```
 
 ## Factorial Calculator
@@ -36,10 +36,10 @@ $original = $n
 
 while ($n > 0) {
     $result = $result * $n
-    dec($n, 1)
+    dec $n - 1
 }
 
-printf("Factorial of ", $original, " is ", $result, "\n")
+printf("Factorial of ", $original, " is ", $result)
 ```
 
 ## Countdown Timer
@@ -50,11 +50,11 @@ printf("Factorial of ", $original, " is ", $result, "\n")
 
 $count = 10
 while ($count > 0) {
-    printf($count, "...\n")
+    printf("$count...")
     sleep(1)
-    dec($count, 1)
+    dec $count - 1
 }
-printf("Blast off!\n")
+printf("Blast off!")
 ```
 
 ## Array Manipulation
@@ -68,24 +68,24 @@ $fruits = ["apple", "banana", "orange"]
 printf("Initial fruits:\n")
 $i = 0
 while ($i < len($fruits)) {
-    printf("  ", $i, ": ", $fruits[$i], "\n")
-    inc($i, 1)
+    printf("  $i: $fruits[$i]")
+    inc $i + 1
 }
 
 # Add a fruit
-push($fruits, "grape")
-printf("\nAfter adding grape: ", len($fruits), " fruits\n")
+push $fruits, "grape"
+printf("\nAfter adding grape: ", len($fruits), " fruits")
 
 # Remove first fruit
-shift($fruits)
-printf("After removing first: ", len($fruits), " fruits\n")
+shift $fruits
+printf("After removing first: ", len($fruits), " fruits")
 
 # Print final list
-printf("\nFinal fruits:\n")
+printf("\nFinal fruits:")
 $i = 0
 while ($i < len($fruits)) {
-    printf("  ", $fruits[$i], "\n")
-    inc($i, 1)
+    printf("  $fruits[$i]")
+    inc $i + 1
 }
 ```
 
@@ -101,16 +101,16 @@ while ($i <= 20) {
     $mod5 = $i % 5
     
     if ((($mod3 == 0) AND ($mod5 == 0))) {
-        printf("FizzBuzz\n")
+        printf("FizzBuzz")
     } elseif ($mod3 == 0) {
-        printf("Fizz\n")
+        printf("Fizz")
     } elseif ($mod5 == 0) {
-        printf("Buzz\n")
+        printf("Buzz")
     } else {
-        printf($i, "\n")
+        printf($i)
     }
     
-    inc($i, 1)
+    inc $i + 1
 }
 ```
 
@@ -128,10 +128,10 @@ while ($i < len($numbers)) {
     if ($numbers[$i] > $max) {
         $max = $numbers[$i]
     }
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Maximum value: ", $max, "\n")
+printf("Maximum value: ", $max)
 ```
 
 ## Shell Integration
@@ -140,19 +140,17 @@ printf("Maximum value: ", $max, "\n")
 #!/usr/bin/minilux
 # Execute system commands
 
-printf("=== System Information ===\n")
+printf("=== System Information ===")
 
 $user = shell("whoami")
-printf("User: ", $user, "\n")
-
 $hostname = shell("hostname")
-printf("Hostname: ", $hostname, "\n")
-
 $os = shell("uname -s")
-printf("OS: ", $os, "\n")
-
 $date = shell("date")
-printf("Date: ", $date, "\n")
+
+printf("User: $user")
+printf("Hostname: $hostname")
+printf("OS: $os")
+printf("Date: $date")
 ```
 
 ## User-Defined Functions
@@ -162,19 +160,19 @@ printf("Date: ", $date, "\n")
 # Define and use custom functions
 
 func greet {
-    printf("Hello from a custom function!\n")
+    printf("Hello from a custom function!")
 }
 
 func calculate {
     $x = 10
     $y = 20
     $result = $x + $y
-    printf("Calculation result: ", $result, "\n")
+    printf("Calculation result: ", $result)
 }
 
 # Call the functions
-greet()
-calculate()
+greet
+calculate
 ```
 
 ## Progress Bar
@@ -188,27 +186,9 @@ $i = 0
 while ($i < 10) {
     printf(".")
     sleep(1)
-    inc($i, 1)
+    inc $i + 1
 }
-printf(" Complete!\n")
-```
-
-## Number Guessing Logic
-
-```minilux
-#!/usr/bin/minilux
-# Number checking (simulated guessing logic)
-
-$secret = 42
-$guess = 35
-
-if ($guess == $secret) {
-    printf("Correct!\n")
-} elseif ($guess < $secret) {
-    printf("Too low!\n")
-} else {
-    printf("Too high!\n")
-}
+printf("Complete!")
 ```
 
 ## Including Other Scripts
@@ -219,11 +199,11 @@ Create a library file `lib.mi`:
 # lib.mi - Helper functions
 
 func sayHello {
-    printf("Hello from library!\n")
+    printf("Hello from library!")
 }
 
 func printSeparator {
-    printf("==================\n")
+    printf("==================")
 }
 ```
 
@@ -235,9 +215,9 @@ Main script `main.mi`:
 
 include "lib.mi"
 
-printSeparator()
-sayHello()
-printSeparator()
+printSeparator
+sayHello
+printSeparator
 ```
 
 ## TCP Socket Example
@@ -246,12 +226,12 @@ printSeparator()
 #!/usr/bin/minilux
 # Simple HTTP request
 
-sockopen($sock, "example.com", 80)
-sockwrite($sock, "GET / HTTP/1.0\r\nHost: example.com\r\n\r\n")
-sockread($sock, $response)
-sockclose($sock)
+sockopen("web", "example.com", 80)
+sockwrite("web", "GET / HTTP/1.0\r\nHost: example.com\r\n\r\n")
+sockread("web", $response)
+sockclose("web")
 
-printf("Response:\n", $response, "\n")
+printf("Response:", $response)
 ```
 
 ## Sum of Numbers
@@ -266,27 +246,8 @@ $sum = 0
 
 while ($i <= $n) {
     $sum = $sum + $i
-    inc($i, 1)
+    inc $i + 1
 }
 
-printf("Sum of 1 to ", $n, ": ", $sum, "\n")
-```
-
-## String Operations
-
-```minilux
-#!/usr/bin/minilux
-# Working with strings
-
-$text = "Hello"
-
-printf("String: ", $text, "\n")
-printf("Length: ", len($text), "\n")
-
-# Print each character
-$i = 0
-while ($i < len($text)) {
-    printf("Char ", $i, ": ", $text[$i], "\n")
-    inc($i, 1)
-}
+printf("Sum of 1 to", $n, ":", $sum)
 ```

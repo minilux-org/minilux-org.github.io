@@ -54,15 +54,15 @@ Compare values and return true (1) or false (0):
 $age = 25
 
 if ($age >= 18) {
-    printf("You are an adult\n")
+    printf("You are an adult")
 }
 
 if ($age < 65) {
-    printf("Not a senior citizen\n")
+    printf("Not a senior citizen")
 }
 
 if ($age == 25) {
-    printf("You are exactly 25\n")
+    printf("You are exactly 25")
 }
 ```
 
@@ -82,11 +82,11 @@ When using `AND` or `OR` operators, **you must use double parentheses**:
 ```minilux
 # ✅ CORRECT - Double parentheses
 if (($age >= 18) AND ($age <= 65)) {
-    printf("Working age\n")
+    printf("Working age")
 }
 
 if (($score < 60) OR ($grade == "F")) {
-    printf("Need to improve\n")
+    printf("Need to improve")
 }
 
 # ❌ WRONG - Single parentheses will cause parse errors
@@ -104,12 +104,12 @@ $hasInsurance = 1
 
 # Multiple AND conditions
 if ((($age >= 18) AND ($hasLicense == 1)) AND ($hasInsurance == 1)) {
-    printf("You can drive!\n")
+    printf("You can drive!")
 }
 
 # Mixing AND and OR
 if ((($age < 18) OR ($age > 65)) AND ($hasDiscount == 1)) {
-    printf("Special discount available\n")
+    printf("Special discount available")
 }
 ```
 
@@ -119,11 +119,11 @@ Simple conditions without logical operators use single parentheses:
 
 ```minilux
 if ($age >= 18) {
-    printf("Adult\n")
+    printf("Adult")
 }
 
 if ($score > 90) {
-    printf("Excellent!\n")
+    printf("Excellent!")
 }
 ```
 
@@ -147,6 +147,6 @@ $x = 5
 $y = 10
 if (($x > 0) AND ($y < 20)) {
     # Both conditions evaluated, then AND applied
-    printf("Both conditions are true\n")
+    printf("Both conditions are true")
 }
 ```

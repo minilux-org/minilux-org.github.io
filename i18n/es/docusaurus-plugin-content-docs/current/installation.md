@@ -4,19 +4,29 @@ sidebar_position: 2
 
 # Instalación
 
-## Prerrequisitos
+Para compilar Minilux desde el código fuente, necesitas el **toolchain de Rust** (cargo + rustc).
 
-Para compilar Minilux desde el código fuente, necesitas el conjunto de herramientas de Rust (cargo + rustc).
-
-### Instalar Rust en Debian/Ubuntu
+### Instalar Rust en Debian/GoldenDog/Ubuntu
 
 ```bash
 sudo apt install cargo
 ```
 
-### Instalar Rust en Otros Sistemas
+### Fedora
 
-Usa rustup para obtener la última versión:
+```bash
+sudo dnf install rust cargo
+```
+
+### macOS (vía homebrew)
+
+```bash
+brew install rust
+```
+
+### Otros Sistemas
+
+Usa rustup para obtener la versión más reciente:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -31,31 +41,36 @@ git clone https://github.com/minilux-org/minilux.git
 cd minilux
 ```
 
-Compila el proyecto:
+### Compilar
 
 ```bash
 make
 ```
 
-O usa Cargo directamente:
-
-```bash
-cargo build --release
-```
-
-El binario compilado estará en `./target/release/minilux`.
-
-## Instalación en el Sistema
+### Instalar
 
 Para instalar Minilux en todo el sistema (en `/usr/bin`):
 
 ```bash
-make install
+sudo make install
 ```
 
-Esto te permite:
-- Ejecutar `minilux` desde cualquier lugar
-- Usar shebang (`#!/usr/bin/minilux`) en tus scripts
+**Nota para usuarios de macOS:** Es posible que necesites editar el `Makefile` y cambiar la ruta de instalación a `/usr/local/bin` si `/usr/bin` está protegido por el sistema.
+
+### Recompilar
+
+Para recompilar completamente, elimina el directorio target y limpia los artefactos de construcción:
+
+```bash
+rm -rf target/
+make uninstall; make clean; make
+```
+
+### Desinstalar
+
+```bash
+sudo make uninstall
+```
 
 ## Ejecución de Scripts
 
@@ -65,21 +80,15 @@ Esto te permite:
 ./minilux script.mi
 ```
 
-O si está instalado:
-
-```bash
-minilux script.mi
-```
-
 ### Con Shebang
 
-Añade esta línea al principio de tu script:
+Añade esta línea en la parte superior de tu script:
 
 ```minilux
 #!/usr/bin/minilux
 
 $nombre = "Mundo"
-printf("Hola, ", $nombre, "!\n")
+printf("¡Hola, $nombre!\n")
 ```
 
 Hazlo ejecutable y ejecútalo:
@@ -91,7 +100,7 @@ chmod +x script.mi
 
 ## Modo REPL
 
-Ejecuta minilux sin argumentos para entrar en el REPL interactivo:
+Ejecuta minilux sin argumentos para entrar en la consola interactiva (REPL):
 
 ```bash
 $ minilux
@@ -99,20 +108,13 @@ Minilux Interpreter Console (REPL)
 Version 0.1.0 on linux/x86_64 -- [Rust]
 
 > $x = 10
-> printf("x = ", $x, "\n")
+> printf("x = $x\n")
 x = 10
 > 
 ```
 
 ## Extensión para VS Code
 
-Para el resaltado de sintaxis en Visual Studio Code:
-
-```bash
-cd vscode-minilux
-npm install -g @vscode/vsce
-vsce package
-code --install-extension minilux-0.1.0.vsix
-```
-
-O instálalo manualmente desde el panel de Extensiones.
+Para resaltado de sintaxis y snippets:
+- [Minilux para VS Code](https://marketplace.visualstudio.com/items?itemName=minilux.minilux)
+- [Minilux para Antigravity (Open VSX)](https://open-vsx.org/extension/minilux/minilux)

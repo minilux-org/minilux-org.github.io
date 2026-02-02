@@ -86,7 +86,7 @@ Ejecuta código repetidamente mientras una condición sea verdadera:
 $i = 1
 while ($i <= 5) {
     printf("Cuenta: ", $i)
-    inc($i, 1)
+    inc $i + 1
 }
 ```
 
@@ -105,7 +105,7 @@ Cuenta: 5
 $cuentaRegresiva = 10
 while ($cuentaRegresiva > 0) {
     printf($cuentaRegresiva, "...")
-    dec($cuentaRegresiva, 1)
+    dec $cuentaRegresiva - 1
 }
 printf("¡Despegue!")
 ```
@@ -118,7 +118,7 @@ $max = 100
 
 while (($contador < $max) AND ($contador < 10)) {
     printf("Contador: ", $contador)
-    inc($contador, 1)
+    inc $contador + 1
 }
 ```
 
@@ -138,7 +138,7 @@ while ($x > 0) {
 $x = 10
 while ($x > 0) {
     printf("x = ", $x)
-    dec($x, 1)  # Modifica la variable del bucle
+    dec $x - 1  # Modifica la variable del bucle
 }
 ```
 
@@ -180,7 +180,7 @@ $i = 0
 
 while ($i < len($frutas)) {
     printf("Fruta ", $i, ": ", $frutas[$i])
-    inc($i, 1)
+    inc $i + 1
 }
 ```
 

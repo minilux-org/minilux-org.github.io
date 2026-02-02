@@ -119,7 +119,7 @@ Las condiciones simples sin operadores lógicos usan un solo paréntesis:
 
 ```minilux
 if ($edad >= 18) {
-    printf("Adulto)
+    printf("Adulto")
 }
 
 if ($puntuacion > 90) {

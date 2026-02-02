@@ -22,9 +22,10 @@ sidebar_position: 1
 ## Ejemplo Rápido
 
 ```minilux
+#!/usr/bin/env minilux
 # Script de saludo simple
 $nombre = "Mundo"
-printf("¡Hola ", $nombre!)
+printf("¡Hola ", $nombre)
 
 # Calcular factorial
 $n = 5

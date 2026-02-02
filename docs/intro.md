@@ -22,6 +22,7 @@ sidebar_position: 1
 ## Quick Example
 
 ```minilux
+#!/usr/bin/env minilux
 # Simple greeting script
 $name = "World"
 printf("Hello, ", $name)
@@ -35,7 +36,7 @@ while ($n > 0) {
     dec $n - 1
 }
 
-printf("Factorial:", $result)
+printf("Factorial: ", $result)
 ```
 
 ## Why Minilux?

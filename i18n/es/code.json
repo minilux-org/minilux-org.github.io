@@ -352,5 +352,32 @@
   },
   "homepage.extVSCode": {
     "message": "Obtén la extensión Minilux para VS Code"
+  },
+  "homepage.quickExample.filename": {
+    "message": "hola.mi"
+  },
+  "homepage.quickExample.commentShell": {
+    "message": "#Llamada al sistema"
+  },
+  "homepage.quickExample.printfUser": {
+    "message": "\"Usuario actual: \""
+  },
+  "homepage.quickExample.commentVar": {
+    "message": "# variable"
+  },
+  "homepage.quickExample.commentIf": {
+    "message": "# condicional"
+  },
+  "homepage.quickExample.printfN1": {
+    "message": "\"n1 es menor que n2\""
+  },
+  "homepage.quickExample.printfN2": {
+    "message": "\"n1 no es menor que n2\""
+  },
+  "homepage.quickExample.commentInfo": {
+    "message": "# info del sistema:"
+  },
+  "homepage.quickExample.printfInfo": {
+    "message": "\"Información del sistema:\""
   }
 }

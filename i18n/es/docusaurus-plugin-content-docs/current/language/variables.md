@@ -41,9 +41,17 @@ $mensaje = "Línea 1\nLínea 2\tTabulado"
 
 ### Interpolación de Cadenas
 
+Minilux admite la interpolación de variables dentro de cadenas entre comillas dobles:
+
+```minilux
 $nombre = "Alexia"
 $edad = 42
 printf("Mi nombre es ", $nombre, " y tengo ", $edad, " años.")
+```
+
+### Secuencias de Escape
+
+Secuencias de escape soportadas:
 - `\n` - nueva línea
 - `\t` - tabulador
 - `\\` - barra invertida
@@ -96,7 +104,7 @@ $x = "ahora una cadena"
 printf("x es: ", $x)  # imprime "x es: ahora una cadena"
 
 $x = [1, 2, 3]
-printf("x ahora es un array con ", len($x), " elementos\n")
+printf("x ahora es un array con ", len($x), " elementos")
 ```
 
 ## Reglas de Nomenclatura

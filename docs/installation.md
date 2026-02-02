@@ -80,7 +80,7 @@ sudo make uninstall
 ./minilux script.mi
 ```
 
-### With Shebang
+### Declaring the interpreter in the script
 
 Add this line at the top of your script:
 

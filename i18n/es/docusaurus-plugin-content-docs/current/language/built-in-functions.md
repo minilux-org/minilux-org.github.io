@@ -24,7 +24,7 @@ print(arg1, arg2, arg3, ...)
 Las cadenas también admiten **interpolación de variables**:
 ```minilux
 $nombre = "Alexia"
-printf("Hola, $nombre!")
+printf("Hola, ", $nombre)
 ```
 
 ### Secuencias de Escape
@@ -41,7 +41,7 @@ printf("¡Hola, Mundo!")
 
 # Imprimir variables por interpolación
 $nombre = "Alexia"
-printf("Hola, $nombre!")
+printf("Hola, ", $nombre)
 
 # Mezclar múltiples valores como argumentos
 $a = 10
@@ -64,7 +64,7 @@ read($variable)
 ```minilux
 printf("¿Cuál es tu nombre? ")
 read($nombre)
-printf("Hola ", $nombre, "!")
+printf("Hola, ", $nombre)
 ```
 
 ## len()
@@ -150,7 +150,7 @@ Devuelve la salida estándar con el salto de línea final eliminado.
 ```minilux
 $usuario = shell("whoami")
 $fecha = shell("date +%Y-%m-%d")
-printf("Usuario: ", $usuario, "en", $fecha)
+printf("Usuario: ", $usuario, " en ", $fecha)
 ```
 
 ## inc / dec

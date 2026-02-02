@@ -18,6 +18,9 @@ func nombre_de_la_funcion {
 }
 ```
 
+### Ejemplos
+
+```minilux
 # Una función de saludo simple
 func saludar {
     printf("¡Hola desde una función personalizada!")
@@ -53,7 +56,7 @@ func incrementar_global {
 }
 
 incrementar_global
-printf("El contador ahora es: $contador\n") # imprime 1
+printf("El contador ahora es: ", $contador) # imprime 1
 ```
 
 ## Código Modular

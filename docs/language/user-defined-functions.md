@@ -29,7 +29,7 @@ func greet {
 # A function using global variables
 $app_version = "0.1.0"
 func show_version {
-    printf("Minilux Version: ",$app_version)
+    printf("Minilux Version: ", $app_version)
 }
 ```
 
@@ -56,7 +56,7 @@ func increment_global {
 }
 
 increment_global
-printf("Counter is now: ",$counter) # prints 1
+printf("Counter is now: ", $counter) # prints 1
 ```
 
 ## Modular Code

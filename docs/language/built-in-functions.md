@@ -24,7 +24,7 @@ print(arg1, arg2, arg3, ...)
 Strings also support **variable interpolation**:
 ```minilux
 $name = "Alexia"
-printf("Hello, $name!\n")
+printf("Hello, ", $name)
 ```
 
 ### Escape Sequences
@@ -37,11 +37,11 @@ Supported escape sequences in strings:
 
 ```minilux
 # Print simple text
-printf("Hello, World!\n")
+printf("Hello, World!")
 
 # Print variables by interpolation
 $name = "Alexia"
-printf("Hello, $name!\n")
+printf("Hello, ", $name)
 
 # Mix multiple values as arguments
 $a = 10
@@ -64,7 +64,7 @@ read($variable)
 ```minilux
 printf("What is your name? ")
 read($name)
-printf("Hello, $name!\n")
+printf("Hello, ", $name)
 ```
 
 ## len()
@@ -124,7 +124,7 @@ upper(string)
 ```minilux
 $answer = "YeS"
 if (lower($answer) == "yes") {
-    printf("Confirmed\n")
+    printf("Confirmed")
 }
 
 printf("Shouting: ", upper("minilux"))
@@ -149,7 +149,7 @@ Returns the standard output with the trailing newline removed.
 ```minilux
 $user = shell("whoami")
 $date = shell("date +%Y-%m-%d")
-printf("User: $user on $date\n")
+printf("User: ", $user, " on ", $date)
 ```
 
 ## inc / dec
@@ -204,9 +204,9 @@ sleep(seconds)
 ### Examples
 
 ```minilux
-printf("Starting...\n")
+printf("Starting...")
 sleep(2)
-printf("2 seconds later\n")
+printf("2 seconds later")
 ```
 
 ## sockopen() / sockwrite() / sockread() / sockclose()

@@ -104,7 +104,7 @@ $x = "now a string"
 printf("x is: ", $x)  # prints "x is: now a string"
 
 $x = [1, 2, 3]
-printf("x is now an array with ", len($x), " elements\n")
+printf("x is now an array with ", len($x), " elements")
 ```
 
 ## Naming Rules

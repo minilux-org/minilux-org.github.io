@@ -7,8 +7,8 @@ sidebar_position: 3
 ## Hello World
 
 ```minilux
-#!/usr/bin/minilux
-printf("Hello, World!\n")
+#!/usr/bin/env minilux
+printf("Hello, World!")
 ```
 
 ## Variables and Math
@@ -27,7 +27,7 @@ printf("Product: ", $product)
 ## Factorial Calculator
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Calculate factorial of a number
 
 $n = 5
@@ -45,12 +45,12 @@ printf("Factorial of ", $original, " is ", $result)
 ## Countdown Timer
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Countdown from 10 to 1
 
 $count = 10
 while ($count > 0) {
-    printf("$count...")
+    printf($count, "...")
     sleep(1)
     dec $count - 1
 }
@@ -60,21 +60,21 @@ printf("Blast off!")
 ## Array Manipulation
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Working with arrays
 
 $fruits = ["apple", "banana", "orange"]
 
-printf("Initial fruits:\n")
+printf("Initial fruits:")
 $i = 0
 while ($i < len($fruits)) {
-    printf("  $i: $fruits[$i]")
+    printf("  ", $i, ": ", $fruits[$i])
     inc $i + 1
 }
 
 # Add a fruit
 push $fruits, "grape"
-printf("\nAfter adding grape: ", len($fruits), " fruits")
+printf("After adding grape: ", len($fruits), " fruits")
 
 # Remove first fruit
 shift $fruits
@@ -84,7 +84,7 @@ printf("After removing first: ", len($fruits), " fruits")
 printf("\nFinal fruits:")
 $i = 0
 while ($i < len($fruits)) {
-    printf("  $fruits[$i]")
+    printf("  ", $fruits[$i])
     inc $i + 1
 }
 ```
@@ -92,7 +92,7 @@ while ($i < len($fruits)) {
 ## FizzBuzz
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # FizzBuzz from 1 to 20
 
 $i = 1
@@ -117,7 +117,7 @@ while ($i <= 20) {
 ## Find Maximum Value
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Find the maximum value in an array
 
 $numbers = [23, 45, 12, 67, 34, 89, 15]
@@ -137,7 +137,7 @@ printf("Maximum value: ", $max)
 ## Shell Integration
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Execute system commands
 
 printf("=== System Information ===")
@@ -147,16 +147,16 @@ $hostname = shell("hostname")
 $os = shell("uname -s")
 $date = shell("date")
 
-printf("User: $user")
-printf("Hostname: $hostname")
-printf("OS: $os")
-printf("Date: $date")
+printf("User: ", $user)
+printf("Hostname: ", $hostname)
+printf("OS: ", $os)
+printf("Date: ", $date)
 ```
 
 ## User-Defined Functions
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Define and use custom functions
 
 func greet {
@@ -178,7 +178,7 @@ calculate
 ## Progress Bar
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Simulate a progress bar
 
 printf("Loading")
@@ -210,7 +210,7 @@ func printSeparator {
 Main script `main.mi`:
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # main.mi - Uses the library
 
 include "lib.mi"
@@ -223,7 +223,7 @@ printSeparator
 ## TCP Socket Example
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Simple HTTP request
 
 sockopen("web", "example.com", 80)
@@ -231,13 +231,13 @@ sockwrite("web", "GET / HTTP/1.0\r\nHost: example.com\r\n\r\n")
 sockread("web", $response)
 sockclose("web")
 
-printf("Response:", $response)
+printf("Response: ", $response)
 ```
 
 ## Sum of Numbers
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Calculate sum of numbers from 1 to N
 
 $n = 100
@@ -249,5 +249,5 @@ while ($i <= $n) {
     inc $i + 1
 }
 
-printf("Sum of 1 to", $n, ":", $sum)
+printf("Sum of 1 to ", $n, ": ", $sum)
 ```

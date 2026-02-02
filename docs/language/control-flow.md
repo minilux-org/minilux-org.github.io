@@ -12,7 +12,7 @@ Minilux provides conditional statements and loops for controlling program flow.
 
 ```minilux
 if ($age >= 18) {
-    printf("You are an adult\n")
+    printf("You are an adult")
 }
 ```
 
@@ -104,7 +104,7 @@ Count: 5
 ```minilux
 $countdown = 10
 while ($countdown > 0) {
-    printf("$countdown...")
+    printf($countdown, "...")
     dec $countdown - 1
 }
 printf("Blast off!")
@@ -117,7 +117,7 @@ $counter = 0
 $max = 100
 
 while (($counter < $max) AND ($counter < 10)) {
-    printf("Counter: ",$counter)
+    printf("Counter: ", $counter)
     inc $counter + 1
 }
 ```
@@ -137,7 +137,7 @@ while ($x > 0) {
 # ✅ CORRECT: Loop will terminate
 $x = 10
 while ($x > 0) {
-    printf("x = $x")
+    printf("x = ", $x)
     dec $x - 1  # Modify the loop variable
 }
 ```
@@ -155,7 +155,7 @@ while ($n > 0) {
     dec $n - 1
 }
 
-printf("Factorial: ",$result)  # prints 120
+printf("Factorial: ", $result)  # prints 120
 ```
 
 ### Sum of Numbers
@@ -179,7 +179,7 @@ $fruits = ["apple", "banana", "orange"]
 $i = 0
 
 while ($i < len($fruits)) {
-    printf("Fruit $i: ", $fruits[$i])
+    printf("Fruit ", $i, ": ", $fruits[$i])
     inc $i + 1
 }
 ```

@@ -74,28 +74,46 @@ function QuickExample() {
                 <div className={clsx(styles.dot, styles.dotRed)}></div>
                 <div className={clsx(styles.dot, styles.dotYellow)}></div>
                 <div className={clsx(styles.dot, styles.dotGreen)}></div>
-                <div className={styles.terminalTitle}>hola.mi — minilux</div>
+                <div className={styles.terminalTitle}>
+                  <Translate id="homepage.quickExample.filename">hello.mi</Translate> — minilux
+                </div>
               </div>
               <pre className={styles.codeBlock}>
                 <code>
-                  <span className={styles.codeGreen}>#!/usr/local/bin/minilux</span><br />
+                  <span className={styles.codeGreen}>#!/usr/bin/env minilux</span><br />
                   <br />
-                  <span className={styles.codeGreen}>#Llamada al sistema</span><br />
-                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"Usuario actual:\n"</span>, <span className={styles.codeYellow}>shell</span>(<span className={styles.codeOrange}>"whoami"</span>))<br />
+                  <span className={styles.codeGreen}>
+                    <Translate id="homepage.quickExample.commentShell"># System call</Translate>
+                  </span><br />
+                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>
+                    <Translate id="homepage.quickExample.printfUser">"Current user: "</Translate>
+                  </span>, <span className={styles.codeYellow}>shell</span>(<span className={styles.codeOrange}>"whoami"</span>))<br />
                   <br />
-                  <span className={styles.codeGreen}># variable</span><br />
+                  <span className={styles.codeGreen}>
+                    <Translate id="homepage.quickExample.commentVar"># variable</Translate>
+                  </span><br />
                   <span className={styles.codeVariable}>$n1</span>=<span className={styles.codeNumber}>10</span><br />
                   <span className={styles.codeVariable}>$n2</span>=<span className={styles.codeNumber}>20</span><br />
                   <br />
-                  <span className={styles.codeGreen}>#condicional</span><br />
+                  <span className={styles.codeGreen}>
+                    <Translate id="homepage.quickExample.commentIf"># conditional</Translate>
+                  </span><br />
                   <span className={styles.codePurple}>if</span> (<span className={styles.codeVariable}>$n1</span> {'<'} <span className={styles.codeVariable}>$n2</span>) <span className={styles.codeYellow}>{'{'}</span><br />
-                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"n1 es menor que n2"</span>)<br />
+                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>
+                    <Translate id="homepage.quickExample.printfN1">"n1 is less than n2"</Translate>
+                  </span>)<br />
                   <span className={styles.codeYellow}>{'}'}</span> <span className={styles.codePurple}>else</span> <span className={styles.codeYellow}>{'{'}</span><br />
-                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"n1 no es menor que n2"</span>)<br />
+                  {'    '}<span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>
+                    <Translate id="homepage.quickExample.printfN2">"n1 is not less than n2"</Translate>
+                  </span>)<br />
                   <span className={styles.codeYellow}>{'}'}</span><br />
                   <br />
-                  <span className={styles.codeGreen}>#info del sistema:</span><br />
-                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>"Información del sistema:"</span>)<br />
+                  <span className={styles.codeGreen}>
+                    <Translate id="homepage.quickExample.commentInfo"># system info:</Translate>
+                  </span><br />
+                  <span className={styles.codeYellow}>printf</span>(<span className={styles.codeOrange}>
+                    <Translate id="homepage.quickExample.printfInfo">"System information:"</Translate>
+                  </span>)<br />
                   <span className={styles.codeYellow}>printf</span>(<span className={styles.codeYellow}>shell</span>(<span className={styles.codeOrange}>"uname -a"</span>))
                 </code>
               </pre>

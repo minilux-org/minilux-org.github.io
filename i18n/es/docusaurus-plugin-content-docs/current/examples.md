@@ -12,7 +12,7 @@ printf("¡Hola, Mundo!")
 ```
 
 ## Variables y Matemáticas
-```
+```minilux
 # Aritmética básica
 $a = 10
 $b = 20
@@ -21,6 +21,7 @@ $producto = $a * $b
 
 printf("Suma: ", $suma)
 printf("Producto: ", $producto)
+```
 
 ## Calculadora de Factorial
 
@@ -37,7 +38,7 @@ while ($n > 0) {
     dec $n - 1
 }
 
-printf("El factorial de $original es $resultado\n")
+printf("El factorial de ", $original, " es ", $resultado)
 ```
 
 ## Temporizador de Cuenta Regresiva
@@ -72,14 +73,14 @@ while ($i < len($frutas)) {
 
 # Añadir una fruta
 push $frutas, "uva"
-printf("\nDespués de añadir uva: ", len($frutas), " frutas")
+printf("Después de añadir uva: ", len($frutas), " frutas")
 
 # Eliminar la primera fruta
 shift $frutas
 printf("Después de eliminar la primera: ", len($frutas), " frutas")
 
 # Imprimir la lista final
-printf("\nFrutas finales:")
+printf("Frutas finales:")
 $i = 0
 while ($i < len($frutas)) {
     printf($i, ": ", $frutas[$i])
@@ -145,10 +146,10 @@ $hostname = shell("hostname")
 $os = shell("uname -s")
 $fecha = shell("date")
 
-printf("Usuario: $usuario")
-printf("Hostname: $hostname")
-printf("SO: $os")
-printf("Fecha: $fecha")
+printf("Usuario: ", $usuario)
+printf("Hostname: ", $hostname)
+printf("SO: ", $os)
+printf("Fecha: ", $fecha)
 ```
 
 ## Funciones Definidas por el Usuario
@@ -165,7 +166,7 @@ func calcular {
     $x = 10
     $y = 20
     $resultado = $x + $y
-    printf("Resultado del cálculo: $resultado")
+    printf("Resultado del cálculo: ", $resultado)
 }
 
 # Llamar a las funciones
@@ -229,7 +230,7 @@ sockwrite("web", "GET / HTTP/1.0\r\nHost: example.com\r\n\r\n")
 sockread("web", $respuesta)
 sockclose("web")
 
-printf("Respuesta:\n",$respuesta)
+printf("Respuesta: ", $respuesta)
 ```
 
 ## Suma de Números
@@ -247,5 +248,5 @@ while ($i <= $n) {
     inc $i + 1
 }
 
-printf("Suma de 1 a ", $n, ":", $suma")
+printf("Suma de 1 a ", $n, ": ", $suma)
 ```

@@ -12,7 +12,7 @@ Minilux proporciona sentencias condicionales y bucles para controlar el flujo de
 
 ```minilux
 if ($edad >= 18) {
-    printf("Eres un adulto\n")
+    printf("Eres un adulto")
 }
 ```
 
@@ -20,9 +20,9 @@ if ($edad >= 18) {
 
 ```minilux
 if ($puntuacion >= 60) {
-    printf("¡Aprobado!\n")
+    printf("¡Aprobado!")
 } else {
-    printf("Suspendido\n")
+    printf("Suspendido")
 }
 ```
 
@@ -49,16 +49,16 @@ if ($puntuacion >= 90) {
 ```minilux
 # ✅ CORRECTO - Dobles paréntesis para condiciones compuestas
 if (($edad >= 18) AND ($tieneID == 1)) {
-    printf("Acceso concedido\n")
+    printf("Acceso concedido")
 }
 
 if (($esFinDeSemana == 1) OR ($esFestivo == 1)) {
-    printf("¡Día libre!\n")
+    printf("¡Día libre!")
 }
 
 # ✅ CORRECTO - Las condiciones simples usan un solo paréntesis
 if ($edad >= 18) {
-    printf("Adulto\n")
+    printf("Adulto")
 }
 ```
 
@@ -67,12 +67,12 @@ if ($edad >= 18) {
 ```minilux
 if ($edad >= 18) {
     if ($tieneLicencia == 1) {
-        printf("Puedes conducir\n")
+        printf("Puedes conducir")
     } else {
-        printf("Necesitas una licencia\n")
+        printf("Necesitas una licencia")
     }
 } else {
-    printf("Demasiado joven para conducir\n")
+    printf("Demasiado joven para conducir")
 }
 ```
 
@@ -104,10 +104,10 @@ Cuenta: 5
 ```minilux
 $cuentaRegresiva = 10
 while ($cuentaRegresiva > 0) {
-    printf($cuentaRegresiva, "...\n")
+    printf($cuentaRegresiva, "...")
     dec($cuentaRegresiva, 1)
 }
-printf("¡Despegue!\n")
+printf("¡Despegue!")
 ```
 
 ### Bucle con Condición Compuesta
@@ -130,7 +130,7 @@ Asegúrate siempre de que la condición de tu bucle eventualmente se vuelva fals
 # ❌ ADVERTENCIA: ¡Bucle infinito!
 $x = 1
 while ($x > 0) {
-    printf("¡Esto nunca se detendrá!\n")
+    printf("¡Esto nunca se detendrá!")
     # Olvidé modificar $x
 }
 

@@ -30,7 +30,7 @@ Cuando se llama a `include`:
 $nombre_app = "Herramienta de Sistema"
 
 func mostrar_banner {
-    printf("--- $nombre_app ---\n")
+    printf("--- $nombre_app ---")
 }
 ```
 
@@ -39,7 +39,7 @@ func mostrar_banner {
 include "lib.mi"
 
 mostrar_banner
-printf("Bienvenido a $nombre_app\n")
+printf("Bienvenido a $nombre_app")
 ```
 
 ## Buenas Prácticas

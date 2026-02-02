@@ -24,7 +24,7 @@ print(arg1, arg2, arg3, ...)
 Las cadenas también admiten **interpolación de variables**:
 ```minilux
 $nombre = "Alexia"
-printf("Hola, $nombre!\n")
+printf("Hola, $nombre!")
 ```
 
 ### Secuencias de Escape
@@ -37,16 +37,16 @@ Secuencias de escape soportadas en cadenas:
 
 ```minilux
 # Imprimir texto simple
-printf("¡Hola, Mundo!\n")
+printf("¡Hola, Mundo!")
 
 # Imprimir variables por interpolación
 $nombre = "Alexia"
-printf("Hola, $nombre!\n")
+printf("Hola, $nombre!")
 
 # Mezclar múltiples valores como argumentos
 $a = 10
 $b = 20
-printf("La suma de ", $a, " y ", $b, " es ", $a + $b, "\n")
+printf("La suma de ", $a, " y ", $b, " es ", $a + $b)
 ```
 
 ## read()
@@ -64,12 +64,13 @@ read($variable)
 ```minilux
 printf("¿Cuál es tu nombre? ")
 read($nombre)
-printf("Hola, $nombre!\n")
+printf("Hola ", $nombre, "!")
 ```
 
 ## len()
 
 Obtiene la longitud de un array o cadena.
+** Nota: ** También se puede utilizar la funcion strlen()
 
 ### Sintaxis
 
@@ -82,11 +83,11 @@ len($variable)
 ```minilux
 # Longitud de un array
 $numeros = [1, 2, 3, 4, 5]
-printf("El array tiene ", len($numeros), " elementos\n")
+printf("El array tiene ", len($numeros), " elementos")
 
 # Longitud de una cadena
 $texto = "Hola"
-printf("La cadena tiene ", len($texto), " caracteres\n")
+printf("La cadena tiene ", len($texto), " caracteres")
 ```
 
 ## number()
@@ -104,7 +105,7 @@ number(expresion)
 ```minilux
 read($entrada)
 $valor = number($entrada)
-printf("El doble es ", $valor * 2, "\n")
+printf("El doble es ", $valor * 2)
 ```
 **Nota:** Si la entrada no se puede procesar como un número, devuelve `0`.
 
@@ -124,10 +125,10 @@ upper(cadena)
 ```minilux
 $respuesta = "Sí"
 if (lower($respuesta) == "sí") {
-    printf("Confirmado\n")
+    printf("Confirmado")
 }
 
-printf("Gritando: ", upper("minilux"), "\n")
+printf("Gritando: ", upper("minilux"))
 ```
 
 ## shell()
@@ -149,7 +150,7 @@ Devuelve la salida estándar con el salto de línea final eliminado.
 ```minilux
 $usuario = shell("whoami")
 $fecha = shell("date +%Y-%m-%d")
-printf("Usuario: $usuario en $fecha\n")
+printf("Usuario: ", $usuario, "en", $fecha)
 ```
 
 ## inc / dec
@@ -204,9 +205,9 @@ sleep(segundos)
 ### Ejemplos
 
 ```minilux
-printf("Empezando...\n")
+printf("Empezando...")
 sleep(2)
-printf("2 segundos después\n")
+printf("2 segundos después")
 ```
 
 ## sockopen() / sockwrite() / sockread() / sockclose()

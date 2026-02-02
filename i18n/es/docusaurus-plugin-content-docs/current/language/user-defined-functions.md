@@ -18,18 +18,15 @@ func nombre_de_la_funcion {
 }
 ```
 
-### Ejemplos
-
-```minilux
 # Una función de saludo simple
 func saludar {
-    printf("¡Hola desde una función personalizada!\n")
+    printf("¡Hola desde una función personalizada!")
 }
 
 # Una función que usa variables globales
 $version_app = "0.1.0"
 func mostrar_version {
-    printf("Versión de Minilux: $version_app\n")
+    printf("Versión de Minilux: ", $version_app)
 }
 ```
 
@@ -44,7 +41,7 @@ saludar
 mostrar_version
 ```
 
-## Alcance (Scope)
+## Scope
 
 Las funciones en Minilux tienen acceso a todas las variables globales. Las variables definidas o modificadas dentro de una función afectan al estado global.
 
@@ -62,3 +59,7 @@ printf("El contador ahora es: $contador\n") # imprime 1
 ## Código Modular
 
 Puedes combinar funciones con la sentencia `include` para organizar tu código en múltiples archivos.
+
+```minilux
+include 'funciones.mi'
+```

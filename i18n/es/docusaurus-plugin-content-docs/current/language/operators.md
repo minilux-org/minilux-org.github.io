@@ -54,15 +54,15 @@ Comparan valores y devuelven verdadero (1) o falso (0):
 $edad = 25
 
 if ($edad >= 18) {
-    printf("Eres un adulto\n")
+    printf("Eres un adulto")
 }
 
 if ($edad < 65) {
-    printf("No eres una persona mayor\n")
+    printf("No eres una persona mayor")
 }
 
 if ($edad == 25) {
-    printf("Tienes exactamente 25 años\n")
+    printf("Tienes exactamente 25 años")
 }
 ```
 
@@ -82,11 +82,11 @@ Cuando uses los operadores `AND` u `OR`, **debes usar dobles paréntesis**:
 ```minilux
 # ✅ CORRECTO - Dobles paréntesis
 if (($edad >= 18) AND ($edad <= 65)) {
-    printf("Edad laboral\n")
+    printf("Edad laboral")
 }
 
 if (($puntuacion < 60) OR ($nota == "F")) {
-    printf("Necesitas mejorar\n")
+    printf("Necesitas mejorar")
 }
 
 # ❌ INCORRECTO - Un solo paréntesis causará errores de análisis
@@ -104,12 +104,12 @@ $tieneSeguro = 1
 
 # Múltiples condiciones AND
 if ((($edad >= 18) AND ($tieneLicencia == 1)) AND ($tieneSeguro == 1)) {
-    printf("¡Puedes conducir!\n")
+    printf("¡Puedes conducir!")
 }
 
 # Mezclando AND y OR
 if ((($edad < 18) OR ($edad > 65)) AND ($tieneDescuento == 1)) {
-    printf("Descuento especial disponible\n")
+    printf("Descuento especial disponible")
 }
 ```
 
@@ -119,11 +119,11 @@ Las condiciones simples sin operadores lógicos usan un solo paréntesis:
 
 ```minilux
 if ($edad >= 18) {
-    printf("Adulto\n")
+    printf("Adulto)
 }
 
 if ($puntuacion > 90) {
-    printf("¡Excelente!\n")
+    printf("¡Excelente!")
 }
 ```
 
@@ -147,6 +147,6 @@ $x = 5
 $y = 10
 if (($x > 0) AND ($y < 20)) {
     # Ambas condiciones se evalúan, luego se aplica el AND
-    printf("Ambas condiciones son verdaderas\n")
+    printf("Ambas condiciones son verdaderas")
 }
 ```

@@ -12,7 +12,7 @@ printf("¡Hola, Mundo!")
 ```
 
 ## Variables y Matemáticas
-
+```
 # Aritmética básica
 $a = 10
 $b = 20
@@ -40,7 +40,7 @@ while ($n > 0) {
 printf("El factorial de $original es $resultado\n")
 ```
 
-## Temporizador de Cuenta Atrás
+## Temporizador de Cuenta Regresiva
 
 ```minilux
 #!/usr/bin/env minilux

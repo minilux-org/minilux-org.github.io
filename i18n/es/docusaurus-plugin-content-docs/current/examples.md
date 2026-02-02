@@ -7,27 +7,25 @@ sidebar_position: 3
 ## Hola Mundo
 
 ```minilux
-#!/usr/bin/minilux
-printf("¡Hola, Mundo!\n")
+#!/usr/bin/env minilux
+printf("¡Hola, Mundo!")
 ```
 
 ## Variables y Matemáticas
 
-```minilux
 # Aritmética básica
 $a = 10
 $b = 20
 $suma = $a + $b
 $producto = $a * $b
 
-printf("Suma: $suma\n")
-printf("Producto: $producto\n")
-```
+printf("Suma: ", $suma)
+printf("Producto: ", $producto)
 
 ## Calculadora de Factorial
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Calcular el factorial de un número
 
 $n = 5
@@ -45,46 +43,46 @@ printf("El factorial de $original es $resultado\n")
 ## Temporizador de Cuenta Atrás
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Cuenta atrás de 10 a 1
 
 $cuenta = 10
 while ($cuenta > 0) {
-    printf("$cuenta...\n")
+    printf($cuenta, " ...")
     sleep(1)
     dec $cuenta - 1
 }
-printf("¡Despegue!\n")
+printf("¡Despegue!")
 ```
 
 ## Manipulación de Arrays
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux 
 # Trabajando con arrays
 
 $frutas = ["manzana", "platano", "naranja"]
 
-printf("Frutas iniciales:\n")
+printf("Frutas iniciales:")
 $i = 0
 while ($i < len($frutas)) {
-    printf("  $i: $frutas[$i]\n")
+    printf($i, ": ", $frutas[$i])
     inc $i + 1
 }
 
 # Añadir una fruta
 push $frutas, "uva"
-printf("\nDespués de añadir uva: ", len($frutas), " frutas\n")
+printf("\nDespués de añadir uva: ", len($frutas), " frutas")
 
 # Eliminar la primera fruta
 shift $frutas
-printf("Después de eliminar la primera: ", len($frutas), " frutas\n")
+printf("Después de eliminar la primera: ", len($frutas), " frutas")
 
 # Imprimir la lista final
-printf("\nFrutas finales:\n")
+printf("\nFrutas finales:")
 $i = 0
 while ($i < len($frutas)) {
-    printf("  $frutas[$i]\n")
+    printf($i, ": ", $frutas[$i])
     inc $i + 1
 }
 ```
@@ -92,7 +90,7 @@ while ($i < len($frutas)) {
 ## FizzBuzz
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # FizzBuzz del 1 al 20
 
 $i = 1
@@ -101,13 +99,13 @@ while ($i <= 20) {
     $mod5 = $i % 5
     
     if ((($mod3 == 0) AND ($mod5 == 0))) {
-        printf("FizzBuzz\n")
+        printf("FizzBuzz")
     } elseif ($mod3 == 0) {
-        printf("Fizz\n")
+        printf("Fizz")
     } elseif ($mod5 == 0) {
-        printf("Buzz\n")
+        printf("Buzz")
     } else {
-        printf("$i\n")
+        printf($i)
     }
     
     inc $i + 1
@@ -117,7 +115,7 @@ while ($i <= 20) {
 ## Encontrar el Valor Máximo
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Encontrar el valor máximo en un array
 
 $numeros = [23, 45, 12, 67, 34, 89, 15]
@@ -131,13 +129,13 @@ while ($i < len($numeros)) {
     inc $i + 1
 }
 
-printf("Valor máximo: $max\n")
+printf("Valor máximo: ", $max)
 ```
 
-## Integración con Shell
+## Ejecutar programas del sistema
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Ejecutar comandos del sistema
 
 printf("=== Información del Sistema ===")
@@ -156,7 +154,7 @@ printf("Fecha: $fecha")
 ## Funciones Definidas por el Usuario
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Definir y usar funciones personalizadas
 
 func saludar {
@@ -178,7 +176,7 @@ calcular
 ## Barra de Progreso
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Simular una barra de progreso
 
 printf("Cargando")
@@ -210,7 +208,7 @@ func imprimirSeparador {
 Script principal `main.mi`:
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # main.mi - Utiliza la librería
 
 include "lib.mi"
@@ -223,7 +221,7 @@ imprimirSeparador
 ## Ejemplo de Socket TCP
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Solicitud HTTP simple
 
 sockopen("web", "example.com", 80)
@@ -237,7 +235,7 @@ printf("Respuesta:\n",$respuesta)
 ## Suma de Números
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 # Calcular la suma de números del 1 al N
 
 $n = 100
@@ -249,5 +247,5 @@ while ($i <= $n) {
     inc $i + 1
 }
 
-printf("Suma de 1 a $n: $suma")
+printf("Suma de 1 a ", $n, ":", $suma")
 ```

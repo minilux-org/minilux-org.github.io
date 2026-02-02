@@ -24,7 +24,7 @@ sidebar_position: 1
 ```minilux
 # Script de saludo simple
 $nombre = "Mundo"
-printf("¡Hola, $nombre!\n")
+printf("¡Hola ", $nombre!)
 
 # Calcular factorial
 $n = 5
@@ -35,7 +35,7 @@ while ($n > 0) {
     dec $n - 1
 }
 
-printf("Factorial: $resultado\n")
+printf("Factorial: ", $resultado)
 ```
 
 ## ¿Por qué Minilux?

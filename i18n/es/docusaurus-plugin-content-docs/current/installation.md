@@ -69,7 +69,7 @@ make uninstall; make clean; make
 ### Desinstalar
 
 ```bash
-sudo make uninstall
+make uninstall
 ```
 
 ## Ejecución de Scripts
@@ -80,27 +80,23 @@ sudo make uninstall
 ./minilux script.mi
 ```
 
-### Con Shebang
+### Con el interprete declarado en el script
 
 Añade esta línea en la parte superior de tu script:
 
 ```minilux
-#!/usr/bin/minilux
+#!/usr/bin/env minilux
 
-$nombre = "Mundo"
-printf("¡Hola ", $nombre, "!")
-```
 
-Hazlo ejecutable y ejecútalo:
+Hacerlo ejecutable y ejecutarlo:
 
 ```bash
 chmod +x script.mi
 ./script.mi
-```
 
 ## Modo REPL
 
-Ejecuta minilux sin argumentos para entrar en la consola interactiva (REPL):
+Se puede ejecutar minilux sin argumentos para acceder a la consola interactiva REPL
 
 ```bash
 $ minilux
@@ -113,8 +109,11 @@ x = 10
 > 
 ```
 
-## Extensión para VS Code
+## Extensiones de Resaltado de Sintaxis para VS Code, Antigravity y GNU nano
 
 Para resaltado de sintaxis y snippets:
 - [Minilux para VS Code](https://marketplace.visualstudio.com/items?itemName=minilux.minilux)
 - [Minilux para Antigravity (Open VSX)](https://open-vsx.org/extension/minilux/minilux)
+- [Minilux para GNU nano](https://github.com/minilux-org/nanorc-minilux)
+
+
